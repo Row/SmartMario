@@ -249,111 +249,109 @@ public boolean[] getAction()
     // Always run
     action[Mario.KEY_SPEED] = true;
     
-    if(true) { //counter % 6 == 0
-        perception.perceive();
-        brain.count();
-        brain.executeAction();
+    perception.perceive();
+    brain.count();
+    brain.executeAction();
 
-        switch(brain.getExecutionResult()) {
-            case IDLE:
-                action[Mario.KEY_LEFT]  = false;
-                action[Mario.KEY_RIGHT] = false;
-                action[Mario.KEY_DOWN]  = false;
-                action[Mario.KEY_JUMP]  = false;
-                action[Mario.KEY_UP]    = false;
-                break;
-            case MOVE_LEFT: 
-                action[Mario.KEY_LEFT]  = true;
-                action[Mario.KEY_RIGHT] = false;
-                action[Mario.KEY_DOWN]  = false;
-                action[Mario.KEY_JUMP]  = false;
-                action[Mario.KEY_UP]    = false;
-                break;
-            case MOVE_RIGHT: 
-                action[Mario.KEY_LEFT]  = false;
-                action[Mario.KEY_RIGHT] = true;
-                action[Mario.KEY_DOWN]  = false;
-                action[Mario.KEY_JUMP]  = false;
-                action[Mario.KEY_UP]    = false;
-                break;
-        case JUMP: 
-                action[Mario.KEY_LEFT]  = false;
-                action[Mario.KEY_RIGHT] = false;
-                action[Mario.KEY_DOWN]  = false;
-                action[Mario.KEY_JUMP]  = true;
-                action[Mario.KEY_UP]    = false;
-                break;
-        case JUMP_LEFT: 
-                action[Mario.KEY_LEFT]  = true;
-                action[Mario.KEY_RIGHT] = false;
-                action[Mario.KEY_DOWN]  = false;
-                action[Mario.KEY_JUMP]  = true;
-                action[Mario.KEY_UP]    = false;
-                break;
-        case JUMP_RIGHT: 
-                action[Mario.KEY_LEFT]  = false;
-                action[Mario.KEY_RIGHT] = true;
-                action[Mario.KEY_DOWN]  = false;
-                action[Mario.KEY_JUMP]  = true;
-                action[Mario.KEY_UP]    = false;
-                break;
-        case FIRE: 
-                action[Mario.KEY_LEFT]  = false;
-                action[Mario.KEY_RIGHT] = false;
-                action[Mario.KEY_DOWN]  = false;
-                action[Mario.KEY_JUMP]  = false;
-                action[Mario.KEY_UP]    = false;
-                action[Mario.KEY_SPEED] = false;
-                break;
-        case FIRE_LEFT:
-                action[Mario.KEY_LEFT]  = true;
-                action[Mario.KEY_RIGHT] = false;
-                action[Mario.KEY_DOWN]  = false;
-                action[Mario.KEY_JUMP]  = false;
-                action[Mario.KEY_UP]    = false;
-                action[Mario.KEY_SPEED] = false;
-                break;
-        case FIRE_RIGHT: 
-                action[Mario.KEY_LEFT]  = false;
-                action[Mario.KEY_RIGHT] = true;
-                action[Mario.KEY_DOWN]  = false;
-                action[Mario.KEY_JUMP]  = false;
-                action[Mario.KEY_UP]    = false;
-                action[Mario.KEY_SPEED] = false;
-                break;
-        case FIRE_JUMP: 
-                action[Mario.KEY_LEFT]  = false;
-                action[Mario.KEY_RIGHT] = false;
-                action[Mario.KEY_DOWN]  = false;
-                action[Mario.KEY_JUMP]  = true;
-                action[Mario.KEY_UP]    = false;
-                action[Mario.KEY_SPEED] = false;
-                break;
-        case FIRE_JUMP_LEFT: 
-                action[Mario.KEY_LEFT]  = true;
-                action[Mario.KEY_RIGHT] = false;
-                action[Mario.KEY_DOWN]  = false;
-                action[Mario.KEY_JUMP]  = true;
-                action[Mario.KEY_UP]    = false;
-                action[Mario.KEY_SPEED] = false;
-                break;
-        case FIRE_JUMP_RIGHT: 
-                action[Mario.KEY_LEFT]  = false;
-                action[Mario.KEY_RIGHT] = true;
-                action[Mario.KEY_DOWN]  = false;
-                action[Mario.KEY_JUMP]  = true;
-                action[Mario.KEY_UP]    = false;
-                action[Mario.KEY_SPEED] = false;
-                break;            
-            default:
-                action[Mario.KEY_LEFT]  = false;
-                action[Mario.KEY_RIGHT] = false;
-                action[Mario.KEY_DOWN]  = false;
-                action[Mario.KEY_JUMP]  = false;
-                action[Mario.KEY_UP]    = false;
-                break;
-        } 
-    }
+    switch(brain.getExecutionResult()) {
+        case IDLE:
+            action[Mario.KEY_LEFT]  = false;
+            action[Mario.KEY_RIGHT] = false;
+            action[Mario.KEY_DOWN]  = false;
+            action[Mario.KEY_JUMP]  = false;
+            action[Mario.KEY_UP]    = false;
+            break;
+        case MOVE_LEFT: 
+            action[Mario.KEY_LEFT]  = true;
+            action[Mario.KEY_RIGHT] = false;
+            action[Mario.KEY_DOWN]  = false;
+            action[Mario.KEY_JUMP]  = false;
+            action[Mario.KEY_UP]    = false;
+            break;
+        case MOVE_RIGHT: 
+            action[Mario.KEY_LEFT]  = false;
+            action[Mario.KEY_RIGHT] = true;
+            action[Mario.KEY_DOWN]  = false;
+            action[Mario.KEY_JUMP]  = false;
+            action[Mario.KEY_UP]    = false;
+            break;
+    case JUMP: 
+            action[Mario.KEY_LEFT]  = false;
+            action[Mario.KEY_RIGHT] = false;
+            action[Mario.KEY_DOWN]  = false;
+            action[Mario.KEY_JUMP]  = true;
+            action[Mario.KEY_UP]    = false;
+            break;
+    case JUMP_LEFT: 
+            action[Mario.KEY_LEFT]  = true;
+            action[Mario.KEY_RIGHT] = false;
+            action[Mario.KEY_DOWN]  = false;
+            action[Mario.KEY_JUMP]  = true;
+            action[Mario.KEY_UP]    = false;
+            break;
+    case JUMP_RIGHT: 
+            action[Mario.KEY_LEFT]  = false;
+            action[Mario.KEY_RIGHT] = true;
+            action[Mario.KEY_DOWN]  = false;
+            action[Mario.KEY_JUMP]  = true;
+            action[Mario.KEY_UP]    = false;
+            break;
+    case FIRE: 
+            action[Mario.KEY_LEFT]  = false;
+            action[Mario.KEY_RIGHT] = false;
+            action[Mario.KEY_DOWN]  = false;
+            action[Mario.KEY_JUMP]  = false;
+            action[Mario.KEY_UP]    = false;
+            action[Mario.KEY_SPEED] = false;
+            break;
+    case FIRE_LEFT:
+            action[Mario.KEY_LEFT]  = true;
+            action[Mario.KEY_RIGHT] = false;
+            action[Mario.KEY_DOWN]  = false;
+            action[Mario.KEY_JUMP]  = false;
+            action[Mario.KEY_UP]    = false;
+            action[Mario.KEY_SPEED] = false;
+            break;
+    case FIRE_RIGHT: 
+            action[Mario.KEY_LEFT]  = false;
+            action[Mario.KEY_RIGHT] = true;
+            action[Mario.KEY_DOWN]  = false;
+            action[Mario.KEY_JUMP]  = false;
+            action[Mario.KEY_UP]    = false;
+            action[Mario.KEY_SPEED] = false;
+            break;
+    case FIRE_JUMP: 
+            action[Mario.KEY_LEFT]  = false;
+            action[Mario.KEY_RIGHT] = false;
+            action[Mario.KEY_DOWN]  = false;
+            action[Mario.KEY_JUMP]  = true;
+            action[Mario.KEY_UP]    = false;
+            action[Mario.KEY_SPEED] = false;
+            break;
+    case FIRE_JUMP_LEFT: 
+            action[Mario.KEY_LEFT]  = true;
+            action[Mario.KEY_RIGHT] = false;
+            action[Mario.KEY_DOWN]  = false;
+            action[Mario.KEY_JUMP]  = true;
+            action[Mario.KEY_UP]    = false;
+            action[Mario.KEY_SPEED] = false;
+            break;
+    case FIRE_JUMP_RIGHT: 
+            action[Mario.KEY_LEFT]  = false;
+            action[Mario.KEY_RIGHT] = true;
+            action[Mario.KEY_DOWN]  = false;
+            action[Mario.KEY_JUMP]  = true;
+            action[Mario.KEY_UP]    = false;
+            action[Mario.KEY_SPEED] = false;
+            break;            
+        default:
+            action[Mario.KEY_LEFT]  = false;
+            action[Mario.KEY_RIGHT] = false;
+            action[Mario.KEY_DOWN]  = false;
+            action[Mario.KEY_JUMP]  = false;
+            action[Mario.KEY_UP]    = false;
+            break;
+    } 
     counter++;
     // prevent mario from holding down jump
     if(isMarioAbleToJump == false && isMarioOnGround == true) {
